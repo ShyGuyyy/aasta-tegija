@@ -67,7 +67,7 @@ def draw():
     win.blit(pildid[hangman_olek], (100, 150))
     pygame.display.update()
 
-
+# Programmi algus paik
 while run == True:
     clock.tick(FPS)
 
