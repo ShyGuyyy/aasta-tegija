@@ -12,10 +12,10 @@ pygame.display.set_caption("Põgenege andmebaasi!")
 conn = sql.connect('Vocostarter.db')
 c = conn.cursor()
 
-# Nuppud
-
 # Font
-Font = pygame.font.SysFont("comicsans", 40)
+Font = pygame.font.SysFont("comicsans", 36)
+text = Font.render("Kuidas ühendaksite teie SQLITE3 andmebaasiga?", False, (255,255,255))
+text_2 = Font.render("V:", False, (255,255,255))
 
 # Fotod
 foto = pygame.image.load(os.path.join('progemine',"Viilu.png")).convert()
@@ -32,11 +32,15 @@ clock = pygame.time.Clock()
 # Kujundus
 def kujundus():
     win.fill(BLACK)
-    pygame.draw.rect(win, WHITE, pygame.Rect(150, 300, 500, 80))
+    pygame.draw.rect(win, WHITE, pygame.Rect(185, 300, 500, 80))
     font_surface = Font.render(entry_1, True, BLACK)
-    win.blit(font_surface, (160, 315))
-    win.blit(foto, (100, 100))
-    win.blit(foto2, (170, 150))
+    # Mängu font
+    win.blit(text,(30,50))
+    win.blit(text_2,(150,320))
+    win.blit(font_surface, (200, 315))
+    # Mängu pildid
+    win.blit(foto, (150, 100))
+    win.blit(foto2, (220, 165))
     pygame.display.update()
 
 # Start
